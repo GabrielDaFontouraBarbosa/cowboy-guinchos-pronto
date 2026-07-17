@@ -63,25 +63,29 @@ p  { margin: 0 0 1em; color: var(--muted); }
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 13px 22px;
+  border-radius: 12px;
   font-weight: 700;
   font-size: .98rem;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+  transition: transform .15s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
   white-space: nowrap;
+  line-height: 1;
 }
+.btn svg { flex-shrink: 0; }
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
-.btn-lg { padding: 16px 26px; font-size: 1.05rem; }
+.btn-lg { padding: 17px 28px; font-size: 1.05rem; }
 .btn-whats {
-  background: var(--whats);
-  color: #08210f;
-  box-shadow: 0 6px 20px rgba(37,211,102,.25);
+  background: linear-gradient(180deg, #25d366 0%, #1ebe57 100%);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(37,211,102,.28), inset 0 1px 0 rgba(255,255,255,.25);
+  border-color: rgba(255,255,255,.08);
 }
-.btn-whats:hover { background: var(--whats-2); color: #fff; }
+.btn-whats:hover { background: linear-gradient(180deg, #2ee073 0%, #1ebe57 100%); color: #fff; box-shadow: 0 10px 26px rgba(37,211,102,.4), inset 0 1px 0 rgba(255,255,255,.3); }
 .btn-outline {
   background: transparent;
   color: var(--text);
@@ -348,6 +352,7 @@ p  { margin: 0 0 1em; color: var(--muted); }
   .main-nav, .btn-header { display: none; }
   .nav-toggle { display: flex; }
   .hero { min-height: auto; padding: 70px 0 50px; }
+  .header-inner { gap: 12px; }
 }
 @media (max-width: 600px) {
   .grid-4, .grid-3 { grid-template-columns: 1fr; }
@@ -355,6 +360,17 @@ p  { margin: 0 0 1em; color: var(--muted); }
   .section { padding: 60px 0; }
   .foot-bottom { flex-direction: column; gap: 10px; text-align: center; }
   .whats-float { width: 54px; height: 54px; right: 14px; bottom: 14px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn { width: 100%; }
+  .cta-final .hero-ctas { flex-direction: column; align-items: stretch; }
+  .cta-final .hero-ctas .btn { width: 100%; }
+  .microproofs { gap: 10px 20px; }
+  .btn-lg { padding: 15px 22px; font-size: 1rem; }
+  .brand-text strong { font-size: 1rem; }
+  .brand-text em { font-size: .68rem; letter-spacing: 2px; }
+  .brand img { width: 40px; height: 40px; }
+  .hero { padding: 50px 0 40px; }
+  .lead { font-size: 1.05rem; }
 }
 
 /* Motion reduzido */
